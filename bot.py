@@ -1,18 +1,18 @@
 import discord
 import os
-cilent = discord.Cilent()
+client = discord.Client()
 
-@cilent.event
+@client.event
 async def on_ready():
-    print('We have logged in as {0.user}'.format(cilent))
+    print('We have logged in as {0.user}'.format(client))
 
-@cilent.event
+@client.event
 async def on_message(text):
-    if text.author == cilent.user:
+    if text.author == client.user:
         return
     
     if text.content.startswith('$hello'):
         await text.channel.send('Hello!')
 
 
-cilent.run(os.getenv('TOKEN'))
+client.run(os.getenv('TOKEN'))

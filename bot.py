@@ -13,3 +13,6 @@ async def on_message(text):
     
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
+
+
+cilent.run(os.getenv('TOKEN'))

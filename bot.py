@@ -11,8 +11,8 @@ async def on_message(text):
     if text.author == cilent.user:
         return
     
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
+    if text.content.startswith('$hello'):
+        await text.channel.send('Hello!')
 
 
 cilent.run(os.getenv('TOKEN'))
